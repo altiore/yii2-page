@@ -18,7 +18,9 @@ class m170107_000000_create_pages_table extends Migration
         $this->createTable($this->table, [
             'id'          => $this->primaryKey(),
             'title'       => $this->string()->notNull(),
+            'url'         => $this->string()->notNull()->unique(),
             'text'        => $this->text()->notNull(),
+            'position'    => $this->integer()->unique(),
             'created_at'  => $this->integer()->notNull(),
             'updated_at'  => $this->integer()->notNull(),
             'created_by'  => $this->integer(),
