@@ -19,9 +19,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'text')->widget(Redactor::className(), [
         'clientOptions' => [
-//            'imageManagerJson' => ['/uploads/image-json'],
-//            'imageUpload' => ['/uploads/images'],
-//            'fileUpload' => ['/uploads/files'],
             'plugins' => ['clips', 'fontcolor','imagemanager']
         ]
     ])
