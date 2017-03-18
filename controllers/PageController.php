@@ -2,44 +2,18 @@
 
 namespace altiore\page\controllers;
 
+use backend\controllers\BaseController;
 use Yii;
 use altiore\page\models\Page;
 use altiore\page\models\PageSearch;
-use yii\filters\AccessControl;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * PageController implements the CRUD actions for Page model.
  * @property \altiore\page\PageModule $module
  */
-class PageController extends Controller
+class PageController extends BaseController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['admin'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all Page models.
      * @return mixed

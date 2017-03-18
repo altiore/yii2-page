@@ -1,7 +1,7 @@
 <?php
 
+use altiore\yii2\markdown\MarkdownEditor;
 use yii\helpers\Html;
-use yii\redactor\widgets\Redactor;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -17,12 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'text')->widget(Redactor::className(), [
-        'clientOptions' => [
-            'plugins' => ['clips', 'fontcolor','imagemanager']
-        ]
-    ])
-    ?>
+    <?= $form->field($model, 'text')->widget(MarkdownEditor::className()) ?>
 
     <?= $form->field($model, 'position')->dropDownList($model::column()) ?>
 

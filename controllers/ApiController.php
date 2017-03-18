@@ -2,9 +2,7 @@
 
 namespace altiore\page\controllers;
 
-use Yii;
 use altiore\page\models\Page;
-use altiore\page\models\PageSearch;
 use yii\rest\Controller;
 use yii\web\NotFoundHttpException;
 
